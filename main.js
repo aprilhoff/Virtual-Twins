@@ -1,3 +1,5 @@
+let dataCache;
+const twinMap = {};
 // Loading Screen
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loading-screen");
@@ -121,11 +123,12 @@ function grabData() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             const data = convertCSVToJSON(xmlhttp.responseText);
-            const twinMap = {};
-            const dataMap = {}; // twin ID → array of raw data rows
-
-            data.forEach(p => {
+            
+            const dataMap = {}; 
+            dataCache = data;
+            data.forEach((p, i) => {
                 const img = document.createElement("img");
+                img.id = "img-" + i;
                 img.src = p.Portrait?.replace(/"/g, "");
                 img.alt = p.Person;
                 img.dataset.twin = p.Twin;
@@ -189,6 +192,21 @@ function grabData() {
 
 grabData();
 
+//when the browser resizes run all that code again
+
+window.addEventListener("resize", () => {
+    dataCache.forEach((p, i) => {
+               const img = document.getElementById("img-" + i);
+               if (img) {
+                   const convertedLong = mapRange(parseFloat(p.Longitude), -180, 180, 0, window.innerWidth);
+                   const convertedLat  = mapRange(parseFloat(p.Latitude),  -90,  90, window.innerHeight, 0);
+                   img.style.top  = convertedLat  + "px";
+                   img.style.left = convertedLong + "px";
+               }
+            });
+                requestAnimationFrame(() => drawAllLines(twinMap));
+
+});
 
 
 
