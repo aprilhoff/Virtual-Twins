@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Twins
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <nav>
+            <img src="assets/VirtualTwins.svg" alt="" class="logo"> 
+             <div>
+                <button id="about">About</button>
+            </div>
+        </nav>
+       <main id="portrait"></main>
+    </main>
+    <div class="loading-screen">
+            <video autoplay muted loop playsinline class="video">
+                <source src="assets/VirtualTwins.mp4" type="video/mp4">
+            </video>
+    </div>
+
+    <div id="info-box">
+        <div>
+            <button id="x">x</button>
+        </div>
+        <div id="info-box-inner">
+        <div class="twin-card" id="twin-a"></div>
+        <div class="divider"></div>
+        <div class="twin-card" id="twin-b"></div>
+    </div>
+    </div>
+
+    <div id="about-box">
+        <div class="about-grid">
+            <div>
+            <p>
+                Virtual Twins sorts wikipedia's expansive <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Virtual_Twins" target="_blank">database</a> on individuals “who were born and died on the same day.” The dataset has been sorted so that uncanny similarities between these individuals can be easily explored. By transforming raw information into an exploratory visual environment, the project makes patterns of coincidence and historical overlap more intuitive and engaging to understand. 
+                <br>
+                <br>
+                Click on each portrait to explore the various connections. The project is designed to an evolving system, so check back in a couple months to see new features and data visualizations.
+            </p>
+            </div>
+             <div>
+                <button id="about-x">x</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

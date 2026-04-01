@@ -1,0 +1,194 @@
+@import url("https://use.typekit.net/pac0foc.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "aglet-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+nav{
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+html{
+    background-image: url(assets/Map.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+#portrait {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    pointer-events: none; 
+}
+#portrait img {
+    position: absolute;
+    height: auto;
+    width: 2rem;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    pointer-events: all;
+    border: 2px solid rgb(233, 233, 233);    
+}
+#portrait img:hover {
+    cursor: pointer;
+    z-index: 1;
+}
+
+#portrait img.twin-hover,
+#portrait img.self-hover {
+    width: 3rem;
+    mix-blend-mode: normal;
+    z-index: 1;
+}
+
+
+    button{
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 0px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border: rgb(255, 255, 255) 2px solid;
+    }
+
+        button:hover{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+.logo{
+    height: 20px;
+}
+
+
+.video{
+    width: 500px;
+    height: auto;
+}
+
+.loading-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    transition: opacity 0.1s ease;
+}
+
+/* twin information box */
+
+#info-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 500px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 16px;
+    z-index: 999999;
+    display: none;
+    font-family: "aglet-sans", sans-serif;
+}
+
+#info-box-inner {
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    gap: 12px;
+}
+
+.divider {
+    background-color: white;
+    width: 1px;
+}
+
+.twin-card img {
+    height: 10rem;
+    width: auto;
+    display: block;
+    margin-bottom: 8px;
+    border: none;
+    mix-blend-mode: normal;
+}
+
+.twin-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    color: #ffffff;
+    border-bottom: 1px solid white;
+}
+
+.twin-card p span {
+    opacity: .5;
+}
+
+#x{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+}
+
+#about-box{
+    position: fixed;
+    top: 10%;
+    right: 10px;
+    width: 500px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    z-index: 999999;
+    display: none;
+    font-size: 15px;
+    line-height: 1.25;
+}
+.about-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding-right: 8px; 
+}
+
+
+#about-x{
+    padding: 4px 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+#about-box a{
+    color: white;
+    opacity: .5;
+}
+
+#about-box a:hover{
+    opacity: 1;
+}
+
+#about-box p{
+        margin-top: 16px;
+}
